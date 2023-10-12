@@ -1,0 +1,35 @@
+.link {
+  display: inline-block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  margin-left: 28px;
+  transition: var(--transition);
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &.is-disabled {
+    color: var(--grey-500);
+    pointer-events: none;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--blue);
+    }
+  }
+}
+
+.link-mainpage {
+  margin-left: 40px;
+}
+
+
+@media (max-width: $desktop) {
+  .link-mainpage {
+    margin-left: 30px;
+  }
+}

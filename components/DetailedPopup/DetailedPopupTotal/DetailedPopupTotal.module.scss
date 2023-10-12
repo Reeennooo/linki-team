@@ -1,0 +1,277 @@
+.total {
+  margin-top: 24px;
+
+  &__border {
+    height: 16px;
+    border-top: 1px dashed var(--grey-500);
+    border-bottom: 1px dashed var(--grey-500);
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2px;
+  }
+
+  &__calc-method {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  &__txt {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--grey-500);
+  }
+
+  &__item-team {
+    .total__item-title {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .total__item-value {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 32px;
+    }
+  }
+
+  &__item-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  &__item-value {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 2px;
+    }
+
+    span {
+      margin-right: 2px;
+    }
+  }
+
+  &__input-wrp {
+    border: 1px solid var(--grey-300);
+    border-radius: 8px;
+    margin: 0 8px 0 12px;
+    padding: 4px 12px;
+
+    input {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 28px;
+      outline: none;
+      border: none;
+      padding: 0;
+      text-align: center;
+    }
+  }
+
+  &__edit {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--grey-500);
+
+    svg {
+      transition: var(--transition);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue);
+      }
+    }
+  }
+}
+
+.total-method-selectors {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+
+  .total-method-selector {
+    width: calc(50% - 6px);
+  }
+}
+
+.total-method-selector {
+  padding: 12px 12px 12px 15.5px;
+  border: 1px solid var(--grey-300);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  transition: var(--transition);
+
+  :global {
+    .input-global:focus {
+      background: var(--background);
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--blue);
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid var(--grey-300);
+    margin-right: 10px;
+    transition: var(--transition);
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 10px;
+      height: 10px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: var(--transition);
+      border-radius: 50%;
+    }
+  }
+
+  &__txt {
+    color: var(--grey-500);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__input {
+    width: 72px;
+    height: 36px;
+    padding: 0 12px;
+  }
+
+  &.is-active {
+    border-color: var(--blue);
+
+    .total-method-selector__indicator {
+      border-color: var(--blue);
+
+      &::before {
+        background: var(--blue);
+        border: 1px solid var(--blue);
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .total-method-selector__txt {
+      color: var(--black);
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .total {
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__txt {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__item-team {
+      .total__item-title {
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      .total__item-value {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &__item-team,
+    &__item-title {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__item-value {
+      font-size: 18px;
+      line-height: 27px;
+
+      svg {
+        max-width: 9px;
+        max-height: 13px;
+      }
+    }
+
+    &__edit {
+      display: flex;
+
+      svg {
+        max-width: 16px;
+        max-height: 16px;
+      }
+    }
+  }
+
+  .total-method-selectors {
+    display: block;
+
+    .total-method-selector {
+      width: 100%;
+      min-height: 60px;
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .total-method-selector {
+    &__txt {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}

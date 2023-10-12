@@ -1,0 +1,125 @@
+@keyframes ringing {
+  0%, 100% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(20deg);
+  }
+
+  40%, 80% {
+    transform: rotate(-12deg);
+  }
+
+  60% {
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes clapp {
+  0%, 100% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(-24deg);
+  }
+
+  40% {
+    transform: rotate(16deg);
+  }
+
+  60% {
+    transform: rotate(-16deg);
+  }
+
+  80% {
+    transform: rotate(16deg);
+  }
+}
+
+.bell {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--grey-100);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  position: relative;
+  padding: 0;
+  margin-left: 34px;
+  transition: var(--transition);
+  transition-property: color;
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--blue-500);
+    }
+  }
+
+  svg {
+    overflow: visible !important;
+  }
+
+  &__wrap {
+    display: flex;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+    transform-origin: 50% 0;
+    position: relative;
+    transition: 400ms ease-in-out color;
+    user-select: none;
+  }
+
+  &__clapper {
+    transform: rotate(0);
+    transform-origin: inherit;
+  }
+
+  &--is-animating {
+
+    .bell {
+
+      &__wrap {
+        animation: ringing 800ms;
+        animation-timing-function: inherit;
+      }
+
+      &__clapper {
+        animation: clapp 800ms;
+        animation-timing-function: inherit;
+      }
+    }
+  }
+
+  &--new {
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 1px;
+      right: 1px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--red);
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .bell {
+    width: 20px;
+    height: 20px;
+    background: none;
+
+    svg {
+      fill: currentColor;
+      stroke: none;
+    }
+  }
+}

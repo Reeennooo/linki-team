@@ -1,0 +1,14 @@
+version: '3'
+
+services:      
+  frontend:
+    restart: unless-stopped
+    build:
+      context: ./
+      args:
+        - DOCK_USER_ID=${DOCK_USER_ID}
+        - DOCK_GROUP_ID=${DOCK_GROUP_ID}
+    volumes:
+      - ./:/app
+    ports:
+      - 3002:3000

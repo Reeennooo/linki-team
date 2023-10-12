@@ -1,0 +1,123 @@
+.register-confirm {
+  width: 100%;
+  max-width: 498px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 53px;
+
+  &__img {
+    margin-bottom: 30px;
+    width: 205px;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+      transform: translateX(-9px);
+    }
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 8px;
+    color: var(--black);
+  }
+
+  &__txt {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: var(--grey-500);
+
+    a {
+      color: var(--blue);
+
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    display: grid;
+    grid-gap: 12px;
+    margin-top: 44px;
+    width: 100%;
+    position: relative;
+    max-width: 280px;
+
+    button {
+      padding: 12px 15px;
+      width: 100%;
+      max-width: 280px;
+      border-radius: 8px;
+
+      &[disabled] {
+        opacity: 0.3;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__resend-txt {
+    font-size: 14px;
+    line-height: 18px;
+    position: absolute;
+    top: calc(100% + 24px);
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .register-confirm {
+    padding-top: 106px;
+
+    &__img {
+      width: 140px;
+      margin-bottom: 27px;
+
+      img {
+        transform: none;
+      }
+    }
+
+    &__title {
+      font-size: 28px;
+      line-height: 40px;
+      margin-bottom: 4px;
+    }
+
+    &__txt {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__btn {
+      margin-top: 33px;
+      padding-bottom: 24px;
+      max-width: 300px;
+
+      button {
+        padding: 8px 15px;
+        max-width: 300px;
+      }
+    }
+
+    &__resend-txt {
+      top: 100%;
+    }
+  }
+}

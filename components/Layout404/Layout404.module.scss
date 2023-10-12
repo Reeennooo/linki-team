@@ -1,0 +1,145 @@
+.page404 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding: 32px;
+  position: relative;
+  justify-content: center;
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__header {
+    display: flex;
+    width: 100%;
+    height: 31px;
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    right: 32px;
+  }
+
+  &__body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 44px;
+      color: var(--blue);
+      text-align: center;
+    }
+
+    p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--black);
+      text-align: center;
+    }
+
+    :global {
+      .default-btn {
+        font-weight: 500;
+        height: 48px;
+        width: 210px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__img {
+    line-height: 0;
+    max-width: 636px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+
+    img {
+      width: 100%;
+      position: relative;
+      left: -81px;
+    }
+  }
+
+  .mob {
+    display: none;
+  }
+
+  @media (max-width: $desktop-big) {
+    &__img {
+      max-width: 500px;
+
+      img {
+        left: -69px;
+      }
+    }
+  }
+
+  @media (max-width: $mobile-big) {
+    &__img {
+      max-width: 400px;
+
+      img {
+        left: -49px;
+      }
+    }
+  }
+
+  @media (max-width: $mobile) {
+
+    padding: 53px 35px 30px;
+    justify-content: initial;
+
+    &__header {
+      position: initial;
+      height: 49px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    .desc {
+      display: none;
+    }
+
+    .mob {
+      display: initial;
+    }
+
+    &__body {
+      position: relative;
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      p {
+        width: 180px;
+        padding-bottom: 336px;
+      }
+    }
+
+    &__img {
+      position: absolute;
+      right: -130px;
+      top: 115px;
+      width: 377px;
+      height: 290px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(19deg);
+      margin-top: 23px;
+      margin-bottom: 21px;
+    }
+  }
+}

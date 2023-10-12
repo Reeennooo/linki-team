@@ -1,0 +1,36 @@
+.tg-link {
+  &__input-wrp {
+    display: flex;
+    align-items: flex-start;
+
+    :global {
+      .default-btn {
+        min-width: 140px;
+      }
+    }
+  }
+
+  &__input {
+    margin-right: 12px;
+    margin-top: 0;
+    width: calc(100% - 152px);
+  }
+}
+
+
+@media (max-width: $mobile-big) {
+  .tg-link {
+
+    &__input {
+      width: calc(100% - 106px);
+    }
+
+    &__input-wrp {
+      :global {
+        .default-btn {
+          min-width: 100px;
+        }
+      }
+    }
+  }
+}

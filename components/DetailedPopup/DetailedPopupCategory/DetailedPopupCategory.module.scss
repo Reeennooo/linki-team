@@ -1,0 +1,35 @@
+.category {
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 8px;
+    color: var(--black);
+  }
+
+  &__list {
+    margin-right: -8px;
+    margin-bottom: -8px;
+  }
+
+  &__item {
+    padding: 5px 28px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .category {
+
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__item {
+      padding: 5px 18px;
+    }
+  }
+}

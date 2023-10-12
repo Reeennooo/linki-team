@@ -1,0 +1,95 @@
+.area {
+  // max-width: 307px;
+  padding: 28px 65px 28px 28px;
+  background-color: var(--background);
+  border-radius: 16px;
+  min-height: 163px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--plusjakarta-font);
+  cursor: pointer;
+  transition: var(--transition);
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--blue-500);
+
+      .area__txt {
+        color: var(--blue-400);
+      }
+
+      .area__data {
+        color: var(--white);
+      }
+
+      .area__teams {
+        svg {
+          stroke: var(--white);
+        }
+      }
+
+      .area__experts {
+        svg {
+          fill: var(--white);
+        }
+      }
+    }
+  }
+
+  &__txt {
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 25px;
+    white-space: pre-line;
+    color: var(--black);
+  }
+
+  &__data {
+    display: flex;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--blue-600);
+  }
+
+  &__teams {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+
+    span {
+      white-space: nowrap;
+    }
+
+    svg {
+      fill: none;
+      stroke: var(--blue-600);
+      margin-right: 8px;
+    }
+  }
+
+  &__experts {
+    display: flex;
+    align-items: center;
+
+    span {
+      white-space: nowrap;
+    }
+
+    svg {
+      fill: var(--blue-600);
+      width: 15px;
+      margin-right: 8px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .area {
+    // max-width: 280px;
+    padding: 28px 34px 28px 26px;
+  }
+}

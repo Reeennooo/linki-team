@@ -1,0 +1,133 @@
+.teams-section {
+  padding-bottom: 200px;
+  height: 100%;
+
+  &__title {
+    position: relative;
+    margin-bottom: 48px;
+
+    h2 {
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 104%;
+      color: var(--black);
+    }
+
+    .teams-section__showall {
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 138.5%;
+      color: var(--grey-83);
+      transition: color var(--transition);
+
+      svg {
+        color: var(--grey-83);
+        margin-left: 5px;
+        margin-top: 3px;
+        width: 15px;
+        height: 15px;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--blue-500);
+        }
+      }
+    }
+  }
+
+  &__banners-wp {
+    margin-bottom: 56px;
+  }
+
+  .word {
+    display: inline-block;
+  }
+
+  &__banner {
+    flex-shrink: 0;
+    margin-right: 12px;
+  }
+
+  &__grid {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(4, 306px);
+    grid-gap: 14px 32px;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .teams-section {
+    &__grid {
+      padding-left: 30px;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .teams-section {
+    &__title {
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .teams-section__showall {
+        position: static;
+        font-size: 20px;
+        line-height: 138.5%;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .teams-section {
+    padding-bottom: 100px;
+
+    &__title {
+
+      h2 {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 104%;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .teams-section {
+
+    &__title {
+      margin-bottom: 32px;
+    }
+
+    &__grid {
+      margin-top: 44px;
+      display: grid;
+      grid-template-rows: 4;
+      grid-template-columns: repeat(3, 320px);
+      grid-gap: 18px 12px;
+      padding-left: 20px;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.board {
+  display: flex;
+  overflow: auto;
+
+  :global {
+    .human-card {
+      cursor: pointer;
+    }
+
+    .project-card {
+      cursor: pointer;
+
+      &__txt {
+        -webkit-line-clamp: 1;
+        min-height: auto;
+
+        @-moz-document url-prefix() {
+          max-height: 18px;
+        }
+
+        @media not all and (min-resolution: 0.001dpcm) {
+          @supports (-webkit-appearance:none) {
+            max-height: 18px;
+          }
+        }
+      }
+    }
+
+    .card__text-info {
+      margin-bottom: 14px;
+      min-height: unset;
+      -webkit-line-clamp: 1;
+      display: -webkit-box;
+      white-space: normal;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .project-card__header {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .board {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+
+    :global {
+
+      .project-card {
+
+        &__header {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}

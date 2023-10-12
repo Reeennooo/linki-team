@@ -1,0 +1,142 @@
+.notification {
+  width: 100%;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  border-radius: inherit;
+  padding: 16px 12px 16px 14px;
+
+  &__timer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    height: 2px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__timer-filler {
+    height: 100%;
+    background-color: var(--blue-500);
+    animation-duration: 4500ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  &__close {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    background: none;
+    flex-shrink: 0;
+    color: var(--grey-500);
+    margin-left: 8px;
+    transition: var(--transition);
+    transition-property: color;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue-500);
+      }
+    }
+  }
+
+  &__icon-wrap {
+    width: 24px;
+    height: 24px;
+    color: var(--blue-300);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+  }
+
+  &__main {
+    margin-right: auto;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__txt {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__btn-wrap {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .notification {
+        &__timer-filler {
+          animation-play-state: paused;
+        }
+      }
+    }
+  }
+
+  &--timer {
+
+    .notification {
+      &__title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      &__txt {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &--error {
+    .notification {
+      &__icon-wrap {
+        color: var(--red);
+      }
+    }
+  }
+
+  &--success {
+    .notification {
+      &__icon-wrap {
+        color: var(--green);
+      }
+    }
+  }
+
+  &--warning {
+    .notification {
+      &__icon-wrap {
+        color: var(--yellow);
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .notification {
+    &__title {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__txt {
+      font-size: 12px;
+    }
+  }
+}

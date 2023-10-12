@@ -1,0 +1,133 @@
+.search {
+  position: relative;
+
+  &__search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 16px;
+    color: var(--grey-300);
+    transition: 0.2s ease;
+    transition-property: color;
+  }
+
+  &.is-active {
+    .search__close {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      color: var(--blue);
+    }
+
+    input {
+      background-color: var(--background) !important;
+    }
+  }
+
+  input {
+    background: var(--grey-100);
+    border: 1px solid var(--grey-300);
+    border-radius: 8px;
+    padding: 0 16px 0 42px;
+    display: block;
+    height: 42px;
+    width: 100%;
+    transition: 0.2s;
+    outline: none !important;
+    padding-right: 40px;
+
+    &.error {
+      border-color: var(--red);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border: 1px solid var(--blue);
+
+        & ~ svg {
+          color: var(--blue-500);
+        }
+      }
+    }
+
+    &::placeholder {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      color: var(--grey-500);
+    }
+
+    &:focus-visible {
+      border: 1px solid var(--blue);
+
+      & ~ svg {
+        color: var(--blue-500);
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 19px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: var(--transition);
+    transition-property: opacity;
+
+    svg {
+      position: static;
+    }
+  }
+
+  &__drop {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 4px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    background-color: var(--white);
+    max-height: 180px;
+    overflow: auto;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__drop-inner {
+    border-radius: inherit;
+  }
+
+  &__li {
+    &:first-child {
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+  }
+
+  &__li-btn {
+    min-height: 30px;
+    padding: 6px 16px;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    border-radius: inherit;
+    transition: 0.25s ease;
+    transition-property: background-color;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--grey-100);
+      }
+    }
+  }
+}

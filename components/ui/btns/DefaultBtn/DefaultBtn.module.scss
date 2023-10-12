@@ -1,0 +1,162 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.4px;
+  text-align: center;
+  color: var(--white);
+  background: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 8px;
+  cursor: pointer;
+  height: 42px;
+  min-width: 172px;
+  padding: 0 15px;
+  transition: var(--transition);
+  transition-property: color, background, border;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--white);
+      color: var(--blue);
+    }
+  }
+
+  &_red {
+    background: var(--red);
+    border-color: var(--red);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--red);
+      }
+    }
+  }
+
+  svg {
+    margin-right: 6px;
+  }
+
+  &[disabled],
+  &--disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &--min-width-auto {
+    min-width: auto;
+  }
+
+  &--lg {
+    height: 48px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  &--md {
+    height: 36px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &--transparent {
+    background-color: var(--white);
+    color: var(--blue);
+    fill: var(--blue);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--blue);
+        color: var(--white);
+      }
+    }
+  }
+
+  &--transparent-black {
+    background-color: var(--white);
+    color: var(--black1010);
+    fill: var(--black1010);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--blue);
+        color: var(--white);
+      }
+    }
+  }
+
+  &--transparent-grey {
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--grey-300);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--black);
+        color: var(--white);
+      }
+    }
+  }
+
+  &--transparent-grey-blue {
+    background-color: var(--grey-100);
+    color: var(--black);
+    border-color: var(--grey-300);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--blue);
+        color: var(--white);
+      }
+    }
+  }
+
+  &--transparent-grey-grey {
+    background-color: var(--white);
+    color: var(--grey-300);
+    border-color: var(--grey-300);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--grey-300);
+        color: var(--white);
+      }
+    }
+  }
+
+  &--success {
+    background-color: var(--green);
+    color: var(--white);
+    border-color: var(--green);
+    padding: 0 8px;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--white);
+        color: var(--green);
+      }
+    }
+  }
+
+  &--warning {
+    background-color: var(--red);
+    border-color: var(--red);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--white);
+        color: var(--red);
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .btn {
+    line-height: 24px;
+  }
+}

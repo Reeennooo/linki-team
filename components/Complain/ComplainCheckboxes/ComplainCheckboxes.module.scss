@@ -1,0 +1,38 @@
+.list {
+  :global {
+    .checkbox {
+      border-bottom: 1px solid var(--grey-250);
+      padding: 11px 16px;
+
+      &:last-child {
+        border: none;
+      }
+
+      &__label {
+        align-items: center;
+      }
+
+      &__custom {
+        width: 16px;
+        height: 16px;
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .list {
+    :global {
+      .checkbox {
+        border: none;
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+    }
+  }
+}

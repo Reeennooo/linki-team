@@ -1,0 +1,40 @@
+.block {
+  display: flex;
+  align-items: flex-start;
+  height: 35px;
+  overflow: hidden;
+  margin-bottom: -8px;
+
+  &__tag {
+    padding-left: 24px;
+    padding-right: 18px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    height: 34px;
+  }
+
+  &__toggle-btn {
+    flex-shrink: 0;
+    justify-content: flex-end;
+    width: 80px;
+    margin-top: 8px;
+    margin-left: auto;
+  }
+
+  &--shown-all {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+@media (max-width: $tablet) {
+  .block {
+    display: block;
+    height: auto;
+    overflow: unset;
+
+    &__toggle-btn {
+      display: none;
+    }
+  }
+}

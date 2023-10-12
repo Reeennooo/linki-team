@@ -1,0 +1,19 @@
+.profile {
+  &__submit {
+    width: 341px;
+    margin-top: 32px;
+    font-size: 18px;
+    line-height: 28px;
+    height: 48px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .profile {
+
+    &__submit {
+      width: 100%;
+      height: 42px;
+    }
+  }
+}

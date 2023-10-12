@@ -1,0 +1,101 @@
+.progress-bar {
+  &__progress-data {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__progress-text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__percents {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    flex-shrink: 0;
+  }
+
+
+  &--lg {
+    .progress-bar__progress-line {
+      margin-top: 15px;
+    }
+
+    .progress-bar__percents {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 16px;
+    }
+
+    .progress-bar__progress-text {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 12px;
+      padding-top: 2px;
+    }
+
+    .progress-bar__progress-data {
+      margin-bottom: 20px;
+    }
+
+    .profile-info__content {
+      padding: 16px 26px 7px;
+    }
+  }
+
+  &--md {
+    .progress-bar__progress-text {
+      font-size: 14px;
+    }
+
+    .progress-bar__progress-line {
+      margin-top: 11px;
+    }
+
+    .progress-bar__percents {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .progress-bar {
+    &--lg {
+
+      .progress-bar {
+
+        &__progress-data {
+          margin-bottom: 0;
+        }
+      }
+
+      .progress-bar__progress-text {
+        display: none;
+      }
+
+      .progress-bar__percents {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        color: var(--yellow);
+      }
+    }
+
+    &--complete {
+
+      .progress-bar {
+
+        &__percents {
+          color: var(--green);
+        }
+      }
+    }
+  }
+}

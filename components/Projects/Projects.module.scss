@@ -1,0 +1,27 @@
+.at-work {
+
+  &__candidates-wrap {
+    min-height: 125px;
+  }
+
+  :global {
+    .projects-team {
+      margin-top: 34px;
+    }
+
+    .sortable-board {
+      margin-top: 24px;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .at-work {
+
+    :global {
+      .projects-team {
+        margin-top: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.invite-expert {
+  position: relative;
+  z-index: 1;
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 8px;
+  }
+
+  &__inputs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+
+    input {
+      background: white !important;
+    }
+  }
+
+  &__inp-group {
+    width: calc(100% - 132px);
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+
+  &__share-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+}
+
+.copy-btn {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 8px;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.share-btn {
+  padding: 0;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.share-popup {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 2px;
+  background: var(--white);
+  box-shadow: 0 0 7px rgba(196, 196, 196, 0.42);
+  border-radius: 8px;
+  padding: 12px 16px;
+  width: 100%;
+  max-width: 297px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: var(--transition);
+  transform: translateY(-20%);
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: none;
+  }
+
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 19px;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        svg {
+          fill: var(--blue);
+        }
+      }
+    }
+  }
+}
+
+.share-link-input {
+  pointer-events: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  input {
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: $mobile) {
+  .invite-expert {
+
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__inp-group {
+      flex-shrink: inherit;
+    }
+  }
+
+  .send-btn,
+  .copy-btn,
+  .share-btn {
+    flex-shrink: 0;
+  }
+}

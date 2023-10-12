@@ -1,0 +1,69 @@
+.modal {
+
+  &__main-wrap {
+    position: relative;
+  }
+
+  &__obs-top {
+    height: 100px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 18px;
+    position: sticky;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background-color: var(--grey-100);
+    border-radius: 28px;
+    display: inline-flex;
+    padding: 5px 24px;
+    margin-bottom: 8px;
+  }
+
+  :global {
+    .modal {
+      &__header {
+        z-index: 2;
+      }
+
+      &__body {
+        margin-top: auto;
+      }
+
+      &__main-inner {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__main {
+        background-color: var(--grey-50);
+        height: 100%;
+        flex: 1;
+        min-height: 0;
+      }
+
+      .modal-footer__dropzone {
+        pointer-events: none;
+        opacity: 0;
+      }
+
+      &__inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      &__footer {
+        height: auto;
+      }
+    }
+  }
+}

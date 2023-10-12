@@ -1,0 +1,47 @@
+.animLine {
+  @include animLine;
+}
+
+.preloader {
+  transition: 0.5s ease;
+  transition-property: opacity, visibility;
+
+  &__loader-wrap {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+  }
+
+  &--is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: $desktop) {
+  .preloader {
+    &__aside-logo {
+      display: none;
+    }
+
+    &__header {
+      height: 55px !important;
+      padding-top: 10px;
+      display: none !important;
+    }
+
+    &__avatar {
+      display: none;
+    }
+
+    &__inner {
+      padding: 0;
+    }
+
+    &__loader-wrap {
+      display: flex;
+    }
+  }
+}

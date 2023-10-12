@@ -1,0 +1,122 @@
+.most-month {
+  background: var(--grey-100);
+  padding-top: 24px;
+  padding-bottom: 18px;
+  border-radius: 8px;
+  width: calc(100vw - 40px);
+  pointer-events: none;
+
+  &__list {
+    display: none;
+    padding: 0 20px;
+
+    & > div {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__list-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 2px;
+  }
+
+  &__list-txt {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 24px;
+    color: var(--grey-500);
+  }
+
+  &__close {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    background: var(--white);
+    border-radius: 50%;
+    border: none;
+  }
+
+
+  &.is-active {
+    position: fixed;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+    width: 100%;
+    border-radius: 0;
+
+    .scroll {
+      padding-bottom: 100px;
+      scrollbar-width: 0;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        background-color: transparent;
+      }
+    }
+
+    .most-month__list {
+      display: block;
+    }
+
+    .most-month__close {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__title-wrp {
+    padding: 0 24px;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  &__txt {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 2px;
+    color: var(--grey-500);
+  }
+
+  &__img {
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}
+
+.scroll {
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+@media (max-width: $mobile-big) {
+  .most-month {
+    pointer-events: all;
+  }
+}

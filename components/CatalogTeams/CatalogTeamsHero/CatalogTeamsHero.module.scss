@@ -1,0 +1,22 @@
+.hero {
+  padding: 96px 42px;
+  background: url('/assets/catalog-teams/banner-min.jpg') center no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 0 8px 8px;
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    margin-bottom: 4px;
+  }
+
+  &__txt {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

@@ -1,0 +1,136 @@
+.rating {
+  display: flex;
+  align-items: center;
+
+  &__label {
+    color: var(--grey-500);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin-right: 4px;
+  }
+
+  &__newbie {
+    display: flex;
+    align-items: center;
+    color: var(--grey-500);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+
+    svg {
+      flex-shrink: 0;
+      fill: none;
+      stroke: currentColor;
+      margin-right: 4px;
+    }
+  }
+
+  &--lg {
+    .rc-rate-star {
+      width: 27px;
+      height: 27px;
+      margin-right: 13px;
+
+      svg {
+        width: 27px;
+        height: 27px;
+      }
+    }
+  }
+
+  &--md {
+    .rc-rate-star {
+      width: 16px;
+      height: 16px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+.rc-rate {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-style: normal;
+  color: transparent;
+
+  svg {
+    fill: currentColor;
+    stroke: var(--grey-300);
+  }
+}
+
+.rc-rate-disabled {
+  pointer-events: none;
+}
+
+.rc-rate-disabled .rc-rate-star:before,
+.rc-rate-disabled .rc-rate-star-content:before {
+  cursor: default;
+}
+
+.rc-rate-star {
+  width: 12px;
+  height: 12px;
+  outline: 1px solid;
+  margin-right: 1px;
+  padding: 0;
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+  line-height: 12px;
+}
+
+.rc-rate-star-first,
+.rc-rate-star-second {
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//.rc-rate-star-focused,
+//.rc-rate-star:hover {
+//  transform: scale(1.1);
+//}
+.rc-rate-star-first {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.rc-rate-star-half .rc-rate-star-first,
+.rc-rate-star-half .rc-rate-star-second {
+  opacity: 1;
+}
+
+.rc-rate-star-half .rc-rate-star-first,
+.rc-rate-star-full .rc-rate-star-second {
+  color: #f5a623;
+
+  svg {
+    stroke: #f5a623;
+  }
+}
+
+.rc-rate-star-half:hover .rc-rate-star-first,
+.rc-rate-star-full:hover .rc-rate-star-second {
+  color: #f8c165;
+
+  svg {
+    stroke: #f8c165;
+  }
+}

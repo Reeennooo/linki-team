@@ -1,0 +1,27 @@
+.soc {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+
+  &__item {
+    display: flex;
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    transition: var(--transition);
+    border-radius: 50%;
+
+    @media (hover: hover) {
+      &:hover {
+        box-shadow: 2px 2px 10px rgba(196, 196, 196, 1);
+      }
+    }
+  }
+}

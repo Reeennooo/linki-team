@@ -1,0 +1,9 @@
+.catalog-teams-slider {
+  overflow: visible;
+
+  :global {
+    .swiper-slide {
+      max-width: 359px;
+    }
+  }
+}

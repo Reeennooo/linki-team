@@ -1,0 +1,129 @@
+.needList {
+  padding-top: 63px;
+  padding-bottom: 60px;
+
+  h3 {
+    color: var(--black);
+    margin-bottom: 32px;
+  }
+}
+
+.el-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+}
+
+// - - - Стили из props
+.padding {
+  padding-top: 52px;
+}
+
+.with-flash {
+  border-radius: 24px;
+  position: relative;
+  background-color: var(--white);
+  padding-top: 32px;
+  padding-bottom: 50px;
+
+  // .title {
+  //   font-weight: 500;
+  //   font-size: 22px;
+  //   line-height: 32px;
+  // }
+
+  .flash {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: -25px;
+    right: 30px;
+  }
+}
+
+
+//- - - Стили для NeedListEl
+.card {
+  padding: 19px;
+  border-radius: 8px;
+  border: 1px solid var(--grey-300);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  white-space: pre-line;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &-withImg {
+    align-items: flex-start;
+    min-height: 208px;
+    position: relative;
+  }
+
+  .check {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    background-color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    svg {
+      color: var(--white);
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  img {
+    position: absolute;
+    bottom: -42px;
+    right: 35px;
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+
+  .check {
+    margin-right: 15px;
+  }
+
+  img {
+    right: -7px;
+  }
+}
+
+
+@media (max-width: $mobile-big) {
+  .el-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    font-size: 16px;
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+  }
+
+  .with-flash {
+    .flash {
+      width: auto;
+      height: auto;
+    }
+  }
+}
+

@@ -1,0 +1,44 @@
+.notification {
+  width: 100%;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+
+  &__head {
+    height: auto;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--grey-250);
+    display: flex;
+    align-items: center;
+  }
+
+  &__row {
+    border-bottom: 1px solid var(--grey-250);
+    height: 57px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__col {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    &.name {
+      color: var(--black);
+      min-width: 85px;
+    }
+
+    &.mail,
+    &.browser {
+      color: var(--grey-500);
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

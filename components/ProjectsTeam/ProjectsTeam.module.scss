@@ -1,0 +1,60 @@
+.projects-team {
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+
+  :global {
+    .swiper {
+      margin-bottom: -125px;
+      pointer-events: none;
+
+      &::after {
+        content: '';
+        position: relative;
+        height: 125px;
+        width: 100%;
+        display: block;
+        pointer-events: none;
+      }
+    }
+
+    .swiper-wrapper {
+      pointer-events: auto;
+    }
+
+    .swiper-slide {
+      width: 260px;
+    }
+
+    .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+      top: 68px;
+      z-index: -1;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .projects-team {
+
+    &__title {
+      margin-bottom: 12px;
+    }
+
+    :global {
+      .swiper {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+
+      .swiper-slide {
+        width: 284px;
+      }
+    }
+  }
+}

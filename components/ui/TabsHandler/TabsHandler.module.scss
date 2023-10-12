@@ -1,0 +1,95 @@
+.tabs-handler {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__btns {
+    display: flex;
+    margin-right: -8px;
+    overflow-x: auto;
+    flex-shrink: 0;
+    width: calc(100% - 70px);
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 105%);
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &__btn {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin-right: 8px;
+    padding: 4px 28px;
+    border: 1px solid var(--grey-300);
+    border-radius: 28px;
+    transition: var(--transition);
+    color: var(--grey-300);
+    cursor: pointer;
+    flex-shrink: 0;
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--blue);
+      }
+    }
+
+    &.is-active {
+      background: var(--grey-100);
+      color: var(--black);
+    }
+  }
+
+  &__link {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    transition: var(--transition);
+    flex-shrink: 0;
+    margin-left: 20px;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue);
+      }
+    }
+  }
+}
+
+
+@media (max-width: $mobile-big) {
+  .tabs-handler {
+    &__btns {
+      margin-left: -20px;
+      width: calc(100% + 40px);
+      padding-left: 20px;
+      padding-right: 20px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__btn {
+      padding: 4px 27px;
+    }
+
+    &__link {
+      display: none;
+    }
+  }
+}

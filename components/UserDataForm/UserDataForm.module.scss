@@ -1,0 +1,284 @@
+.userdata {
+  width: 450px;
+  padding-top: 30px;
+  margin-right: 50px;
+  position: relative;
+
+  &__error {
+    font-size: 12px;
+    color: var(--red);
+  }
+
+  &_new {
+    padding-top: 47px;
+    margin-right: 75px;
+  }
+
+  form {
+    height: 100%;
+  }
+
+  &__search {
+
+    input {
+      height: 48px;
+      background-color: var(--white);
+    }
+  }
+
+  &__phone {
+    position: relative;
+
+    div {
+      position: relative;
+    }
+
+    input {
+      padding-left: 40px;
+      min-height: 48px;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 17px;
+      fill: none;
+      stroke: var(--grey-500);
+    }
+  }
+
+  &__back {
+    color: var(--grey-500);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+    top: -13px;
+    left: 2px;
+
+    svg {
+      margin-right: 4px;
+      transition: var(--transition);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        svg {
+          color: var(--blue-500);
+        }
+      }
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+    min-height: 399px;
+
+    label {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    color: var(--black);
+    margin-bottom: 32px;
+  }
+
+  &__title_marginSmall {
+    margin-bottom: 5px !important;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--black);
+  }
+
+  &__btn {
+    margin-top: 22px;
+    width: 100%;
+    height: 54px;
+    font-size: 18px;
+  }
+
+  &__btn-answer {
+    max-width: 221px;
+    width: 100%;
+    border-radius: 28px;
+    height: 48px;
+  }
+
+  &__btns-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8px;
+  }
+
+  &__soc-wp {
+    margin: 32px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .userdata__soc {
+      width: 142px;
+      height: 48px;
+
+      img {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__agree {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--grey-500);
+
+    a {
+      color: var(--black);
+      text-decoration: underline;
+
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__progress {
+    display: flex;
+    align-items: center;
+  }
+
+  &__counter {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-500);
+    margin-right: 12px;
+
+    &.active {
+      color: var(--black);
+    }
+  }
+
+  &__progress-el {
+    max-width: 134px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--grey-250);
+    margin-right: 4px;
+
+    &.active {
+      background-color: var(--blue-500);
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .userdata {
+    margin-right: 0;
+
+    &__soc-wp {
+
+      .userdata__soc {
+        margin-right: 5px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .userdata {
+
+    &__slide {
+      min-height: 350px;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+
+    &__soc-wp {
+
+      .userdata__soc {
+        width: 101px;
+      }
+    }
+
+    &__btns-container {
+      grid-template-columns: 156px 156px;
+    }
+
+    &__btn-answer {
+      min-width: auto;
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .userdata {
+
+
+    &__btns-container {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__soc-wp {
+
+      .userdata__soc {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+
+  .userdata {
+    width: 100%;
+    padding-top: 20px;
+
+    &__slide {
+      min-height: 300px;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 36px;
+      margin-bottom: 20px;
+    }
+
+    &__soc-wp {
+      margin-bottom: 8px;
+    }
+
+    &__btns-container {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__btn {
+      margin-top: 12px;
+    }
+  }
+}

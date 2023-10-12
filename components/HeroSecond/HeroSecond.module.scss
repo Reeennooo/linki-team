@@ -1,0 +1,239 @@
+.wrapper {
+  padding-top: 112px;
+}
+
+.hero {
+  padding-top: 200px;
+  padding-bottom: 20px;
+  background-color: var(--background);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+
+  .avatar1 {
+    position: absolute;
+    top: 36.5%;
+    left: 14%;
+    width: 156px;
+    height: 156px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .avatar2 {
+    position: absolute;
+    top: 4%;
+    left: 42.7%;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .avatar3 {
+    position: absolute;
+    top: 18.5%;
+    left: 71%;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .avatar4 {
+    position: absolute;
+    top: 55.3%;
+    left: 77%;
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .zigzag {
+    position: absolute;
+    top: -20%;
+    left: 0;
+    width: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .text {
+    z-index: 1;
+    position: relative;
+    margin: 0 auto;
+    width: 500px;
+
+    h2 {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 32px;
+      color: var(--black);
+      text-align: center;
+    }
+  }
+
+  .text-violet {
+    background-color: rgba($color: #6420FF, $alpha: 0.9);
+    text-align: center;
+    color: var(--white);
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 40px;
+    padding: 5px 20px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: $desktop) {
+  .wrapper {
+
+    .avatar1 {
+      width: 104px;
+      height: 104px;
+      top: 70%;
+      left: 10%;
+    }
+
+    .avatar2 {
+      width: 88px;
+      height: 88px;
+    }
+
+    .avatar3 {
+      width: 88px;
+      height: 88px;
+      top: 15%;
+      left: 74%;
+    }
+
+    .avatar4 {
+      width: 144px;
+      height: 144px;
+      top: 70%;
+      left: 80%;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .wrapper {
+
+    .zigzag {
+      position: absolute;
+      top: -10%;
+      left: 0;
+      width: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .avatar1 {
+      width: 104px;
+      height: 104px;
+      top: 75%;
+      left: 5%;
+    }
+
+    .avatar2 {
+      width: 88px;
+      height: 88px;
+    }
+
+    .avatar3 {
+      width: 88px;
+      height: 88px;
+      top: 15%;
+      left: 74%;
+    }
+
+    .avatar4 {
+      width: 96px;
+      height: 96px;
+      top: 75%;
+      left: 80%;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .wrapper {
+    padding-top: 95px;
+
+    .hero {
+      padding-top: 292px;
+
+      .zigzag {
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    .avatar1 {
+      width: 52px;
+      height: 52px;
+      top: 36.5%;
+      left: 18%;
+    }
+
+    .avatar2 {
+      width: 44px;
+      height: 44px;
+    }
+
+    .avatar3 {
+      width: 44px;
+      height: 44px;
+      top: 18.4%;
+      left: 71%;
+    }
+
+    .avatar4 {
+      width: 48px;
+      height: 48px;
+      top: 42.2%;
+      left: 67.5%;
+    }
+
+    .text {
+      width: 261px;
+
+      h2 {
+        text-align: start;
+      }
+    }
+
+    .text-violet {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 28px;
+      padding: 4px 13px;
+    }
+  }
+}

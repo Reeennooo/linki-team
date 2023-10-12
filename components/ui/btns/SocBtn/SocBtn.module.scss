@@ -1,0 +1,38 @@
+.soc-btn {
+  background: var(--white);
+  border: 1px solid var(--grey-300);
+  border-radius: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  transition-property: background;
+
+  @media (hover: hover) {
+    &:hover {
+      background: var(--grey-100);
+    }
+  }
+
+  img {
+    width: 20px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &.is-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .soc-btn {
+    font-size: 14px;
+  }
+}

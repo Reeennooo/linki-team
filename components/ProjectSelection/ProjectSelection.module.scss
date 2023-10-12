@@ -1,0 +1,98 @@
+.block {
+  margin-bottom: 38px;
+
+  &__mob-title {
+    display: none;
+  }
+}
+
+.title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  min-height: 210px;
+
+  :global {
+
+    .swiper {
+      padding-bottom: 16px;
+      margin: 0;
+    }
+
+    .swiper-slide {
+      width: 260px;
+    }
+
+    .project-card,
+    .tail-card {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.loading {
+  width: 260px;
+  height: 200px;
+  @include animLine;
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.card {
+  cursor: pointer;
+
+  &--active {
+    border-color: var(--blue);
+  }
+}
+
+@media (max-width: $tablet) {
+  .block {
+
+    &__mob-title {
+      display: block;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 32px;
+      margin-bottom: 16px;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .block {
+    margin-bottom: 30px;
+    margin-left: -20px;
+    margin-right: -20px;
+
+    &__mob-title {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  .list {
+    min-height: 177px;
+
+    :global {
+      .swiper {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .loading {
+    height: 158px;
+  }
+}

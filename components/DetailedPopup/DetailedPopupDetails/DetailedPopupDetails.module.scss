@@ -1,0 +1,54 @@
+.toggle-block {
+  color: var(--black);
+
+  .toggle-block__btn {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  &__main {
+    overflow: hidden;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    transition: var(--transition);
+    transition-property: height;
+  }
+
+  &__inner {
+
+    p {
+      min-height: 18px;
+    }
+  }
+
+  a {
+    color: var(--blue-300);
+    text-decoration: underline;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  ul, ol {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .toggle-block {
+
+    .toggle-block {
+
+      &__btn {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}

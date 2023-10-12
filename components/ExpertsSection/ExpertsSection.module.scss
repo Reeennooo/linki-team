@@ -1,0 +1,113 @@
+.body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.main {
+  width: 100%;
+  margin-right: 20px;
+}
+
+.aside {
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+  order: 1;
+}
+
+.grid,
+.loading {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.loading {
+  span {
+    display: block;
+    height: 238px;
+    border-radius: 8px;
+    @include animLine;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: $desktop-big) {
+  .grid,
+  .loading {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+  }
+
+  .loading {
+
+    span {
+      &:nth-child(4) {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .body {
+    display: block;
+  }
+
+  .aside {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .grid,
+  .loading {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  .loading {
+
+    span {
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-sm) {
+  .grid,
+  .loading {
+    display: block;
+  }
+
+  .grid {
+    :global {
+      .human-card-info {
+        margin-bottom: 12px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .loading {
+
+    span {
+      height: 125px;
+
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+.areas {
+  font-family: var(--plusjakarta-font);
+  padding-bottom: 200px;
+
+  &__title {
+    position: relative;
+    margin-bottom: 48px;
+
+    h2 {
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 104%;
+      color: var(--black);
+    }
+
+    .areas__showall {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 138.5%;
+      color: var(--grey-83);
+      transition: color var(--transition);
+
+      svg {
+        color: var(--grey-83);
+        margin-left: 5px;
+        margin-top: 3px;
+        width: 15px;
+        height: 15px;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--blue-500);
+        }
+      }
+    }
+  }
+
+  .word {
+    display: inline-block;
+  }
+
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 307px);
+    grid-gap: 30px;
+    overflow-x: auto;
+    padding-left: 30px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__card {
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .areas {
+    &__title {
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .areas__showall {
+        position: static;
+        font-size: 20px;
+        line-height: 138.5%;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .areas {
+    padding: 100px 0;
+
+    &__title {
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 104%;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .areas {
+
+    &__title {
+      margin-bottom: 32px;
+    }
+
+    &__wrapper {
+      grid-template-columns: repeat(4, 280px);
+      grid-gap: 10px;
+      padding: 0 20px;
+    }
+
+    &__card {
+      margin-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,214 @@
+.role-selection {
+  width: 100%;
+  max-width: 450px;
+  padding-top: 26px;
+
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: var(--grey-500);
+    margin-bottom: 40px;
+  }
+
+  &__create {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: var(--blue);
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--blue);
+    margin-top: 35px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    transition: var(--transition);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--blue);
+      background: white;
+    }
+
+    &.is-disabled {
+      cursor: not-allowed;
+      color: white;
+      background: var(--blue);
+    }
+  }
+}
+
+.role-selectors {
+  &__role {
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border: 1px solid var(--grey-300);
+    border-radius: 8px;
+    padding: 20px 20px 20px 28px;
+    transition: var(--transition);
+    margin-bottom: 12px;
+    cursor: pointer;
+
+    svg {
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    &.is-active {
+      background: var(--background);
+      border-color: var(--blue);
+
+      svg {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      border-color: var(--blue);
+    }
+
+    &.is-error {
+      border-color: var(--red);
+    }
+  }
+
+  &__role:nth-last-child(-n+2) {
+    margin-bottom: 20px;
+  }
+
+  &__role-img {
+    margin-right: 14px;
+  }
+
+  &__role-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    color: var(--black);
+    margin-bottom: 2px;
+  }
+
+  &__role-descr {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-500);
+  }
+
+  &__role-icon {
+    margin-left: auto;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      fill: var(--blue);
+      transform: rotate(180deg);
+      width: 17px;
+    }
+  }
+
+  &__radio {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: var(--transition);
+
+    &.is-active {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__radio-tooltip {
+    margin-left: 8px;
+  }
+
+  &__check-wrp {
+    margin-top: 20px;
+  }
+
+  &__p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+
+    a {
+      color: var(--blue);
+
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .role-selection {
+    padding-top: 12px;
+
+    &__title {
+      font-size: 28px;
+      line-height: 32px;
+      margin-bottom: 4px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 32px;
+    }
+
+    &__create {
+      font-size: 16px;
+      line-height: 24px;
+      padding: 8px 15px;
+      margin-top: 32px;
+    }
+  }
+
+  .role-selectors {
+    &__role {
+      padding: 13px 23px 9px;
+    }
+
+    &__role-title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__role-descr {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &__role-icon {
+      display: none;
+    }
+
+    &__check-wrp {
+      margin-top: 16px;
+    }
+  }
+}

@@ -1,0 +1,249 @@
+.iat {
+  background: var(--grey-100);
+  // border: 1px solid var(--grey-300);
+  border-radius: 8px;
+  padding: 16px 14px 0;
+  position: relative;
+
+  &.no-tags {
+    .iat__top {
+      cursor: unset;
+    }
+  }
+
+  &.is-open {
+    .iat__category-count {
+      svg {
+        transform: rotateX(-180deg);
+      }
+    }
+  }
+
+  &__edit {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__edit-edit {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: var(--grey-500);
+    transition: var(--transition);
+    transition-property: color;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue);
+      }
+    }
+  }
+
+  &__edit-close {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: var(--grey-500);
+
+    svg {
+      transition: var(--transition);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        svg {
+          fill: var(--blue);
+        }
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        .iat__category-count {
+          color: var(--black);
+        }
+      }
+    }
+  }
+
+  &__top-price {
+    margin-left: auto;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+
+    span {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+      margin-left: 4px;
+    }
+  }
+
+  &__icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    background: var(--blue);
+    flex-shrink: 0;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--white);
+    }
+  }
+
+  .rocket {
+    fill: var(--white);
+  }
+
+  &__title-wrap {
+    display: flex;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -8px;
+  }
+
+  &__tag {
+    padding: 5px 32px;
+    background: var(--white);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    border-radius: 28px;
+  }
+
+  &__category-count {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-500);
+    margin-left: 8px;
+    transition: var(--transition);
+
+    svg {
+      fill: var(--black);
+      margin-left: 7px;
+      transition: var(--transition);
+    }
+  }
+
+  &__tags-wrp {
+    overflow: hidden;
+    transition: var(--transition);
+    transition-property: height;
+    margin-top: 16px;
+
+    &--with-price {
+
+      .iat {
+
+        &__tags-inner {
+          padding-bottom: 12px;
+        }
+      }
+    }
+  }
+
+  &__price {
+    background: var(--white);
+    padding: 4px 12px;
+    border-radius: 8px;
+    color: var(--blue);
+  }
+
+  &__price-sign {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    margin-right: 4px;
+  }
+
+  &__price-val {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    margin-right: 4px;
+  }
+
+  &__price-txt {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .iat {
+
+    &__icon {
+      width: 40px;
+      height: 40px;
+    }
+
+
+    &__title-wrap {
+      display: block;
+    }
+
+    &__category-count {
+      font-size: 12px;
+      line-height: 18px;
+      margin-left: 0;
+    }
+
+    &__title {
+      font-size: 14px;
+      line-height: 18px;
+      margin-bottom: 2px;
+    }
+
+    &__price {
+      text-align: center;
+    }
+
+    &__top-price {
+      flex-wrap: wrap;
+    }
+  }
+}

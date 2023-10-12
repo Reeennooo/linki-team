@@ -1,0 +1,21 @@
+.most {
+  display: none;
+}
+
+.team-list-wrp {
+  margin-top: 62px;
+}
+
+@media (max-width: $mobile-big) {
+  .hero {
+    display: none;
+  }
+
+  .most {
+    display: block;
+  }
+
+  .team-list-wrp {
+    margin-top: 44px;
+  }
+}

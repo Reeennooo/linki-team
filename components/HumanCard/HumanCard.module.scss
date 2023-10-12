@@ -1,0 +1,218 @@
+.card {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 14px 16px 20px;
+  transition: 0.15s linear;
+  transition-property: border;
+
+  &__main {
+    display: flex;
+
+    &--img {
+      .card {
+        &__content {
+          width: calc(100% - 52px);
+        }
+      }
+    }
+  }
+
+  &__avatar {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin-right: 12px;
+  }
+
+  &__no-avatar {
+    border: 1px solid var(--grey-500);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--grey-500);
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+
+  &__content {
+    width: 100%;
+    position: relative;
+  }
+
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    padding-right: 24px;
+    margin-bottom: 4px;
+  }
+
+  &__header-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--grey-500);
+    padding: 0;
+    transition: 0.25s linear;
+    transition-property: color;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--black);
+      }
+    }
+  }
+
+  &__txt {
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    white-space: normal;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
+
+    @-moz-document url-prefix() {
+      display: block;
+      max-height: 18px;
+    }
+
+    @media not all and (min-resolution: 0.001dpcm) {
+      @supports (-webkit-appearance:none) {
+        display: block;
+        max-height: 18px;
+      }
+    }
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+
+    svg {
+      width: 12px;
+      height: 12px;
+      fill: none;
+      stroke: var(--grey-300);
+      margin-right: 4px;
+    }
+
+    span {
+      padding-top: 2px;
+      color: var(--grey-500);
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-active {
+      svg {
+        fill: var(--yellow);
+        stroke: none;
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 20px;
+
+    svg {
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+  }
+
+  &__price-note {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+
+    &--two-btns {
+      .card {
+        &__btn-chat,
+        &__btn-offer {
+          width: calc(50% - 4px);
+        }
+      }
+    }
+  }
+
+  &__btn-chat,
+  &__btn-offer,
+  &__btn-start {
+    margin-top: 20px;
+    width: 100%;
+    padding: 0 9px;
+    margin-right: 8px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__btn-start {
+    min-width: 122px;
+  }
+
+  &__wait {
+    margin-top: 16px;
+  }
+
+  :global {
+    .rc-rate {
+      margin-top: 11px;
+    }
+  }
+
+  &--is-active {
+    border-color: var(--blue-500);
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .card {
+    padding: 12px 16px 16px;
+
+    &__name {
+      font-size: 14px;
+      line-height: 18px;
+      padding-right: 0;
+      margin-bottom: 2px;
+    }
+
+    &__txt {
+      font-size: 12px;
+    }
+
+    &__header-btn {
+      display: none;
+    }
+  }
+}

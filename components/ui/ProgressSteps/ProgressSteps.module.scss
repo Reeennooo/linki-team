@@ -1,0 +1,30 @@
+.progress {
+  display: flex;
+  align-items: center;
+
+  &__content {
+    flex-shrink: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 12px;
+  }
+
+  &__lines {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(0, 1fr) );
+    grid-gap: 0 4px;
+  }
+
+  &__line {
+    flex: 1;
+    height: 3px;
+    border-radius: 1px;
+    background-color: var(--grey-250);
+
+    &--is-active {
+      background-color: var(--blue-500);
+    }
+  }
+}

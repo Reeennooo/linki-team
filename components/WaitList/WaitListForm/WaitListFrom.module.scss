@@ -1,0 +1,198 @@
+.form {
+  max-width: 490px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 40px 20px 80px;
+
+  &__main {
+    margin-bottom: 20px;
+  }
+
+  &__footer {
+    margin-top: auto;
+
+    :global {
+      .default-btn {
+        margin-right: 12px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__footer-wrap {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 450px;
+    margin: auto;
+  }
+
+  &__progress {
+    margin-bottom: 36px;
+  }
+
+  &__group-title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 36px;
+  }
+
+  &__field {
+    position: relative;
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--is-shown {
+      margin-top: -16px;
+    }
+  }
+
+  &__field-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8px;
+  }
+
+  &__btn-back {
+    min-width: 100px;
+  }
+
+  &__btn-next {
+    min-width: 180px;
+  }
+
+  &__select-wrap {
+    position: relative;
+
+    &--multi {
+      :global {
+        .react-select {
+          &__value-container {
+            opacity: 0;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__multi-select-placeholder {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 18px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-500);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__select-tag {
+    margin-top: 8px;
+    margin-right: 8px;
+  }
+
+  :global {
+    .checkbox {
+      position: relative;
+
+      &__txt {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    .react-select {
+      z-index: unset;
+
+      &__clear-indicator {
+        display: none;
+      }
+
+      &__placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--grey-500);
+      }
+    }
+
+    .input-group {
+      &__error {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+@media (max-width: $tablet) {
+  .form {
+    padding-bottom: 100px;
+
+    .form__field {
+      input {
+        font-size: 14px;
+
+        @include placeholder {
+          font-size: inherit;
+        }
+      }
+    }
+
+    &__footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: 3px 0 12px rgba(36, 36, 36, 0.08);
+      border-top: 1px solid var(--grey-250);
+      background-color: var(--white);
+      padding: 22px 20px;
+
+      :global {
+        .default-btn {
+          flex: 1;
+          min-width: auto;
+        }
+      }
+    }
+
+    &__btn-back,
+    &__btn-next {
+      height: 42px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__multi-select-placeholder {
+      font-size: 14px;
+    }
+
+    :global {
+      .react-select {
+        &__placeholder {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.tour-tooltip {
+  background: var(--white);
+  padding: 16px 20px;
+  border-radius: 8px;
+  max-width: 326px;
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 8px;
+  }
+
+  &__content {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 24px;
+
+    p {
+      color: var(--blue);
+    }
+
+    span {
+      color: var(--grey-300);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__btns {
+    display: flex;
+
+    button {
+      min-width: 94px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      font-size: 14px;
+      line-height: 18px;
+      outline: none;
+    }
+  }
+
+  &__skip {
+    margin-right: 8px;
+  }
+
+  &__count {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+
+  &__cout-index {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}

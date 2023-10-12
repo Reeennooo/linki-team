@@ -1,0 +1,71 @@
+.grade-pm {
+  &__img {
+    width: 100%;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__txt {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 406px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+.grade-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: var(--white);
+  border: 1px solid var(--grey-300);
+  border-radius: 8px;
+
+  &__pm-avatar {
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+      border-radius: 50%;
+    }
+  }
+
+  &__pm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__pm-name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__pm-position {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--grey-500);
+  }
+}

@@ -1,0 +1,67 @@
+.rnc__base {
+  z-index: 10151 !important;
+}
+
+.rnc__notification .rnc__notification-item {
+  opacity: 0;
+  box-shadow: 0 4px 4px rgba(66, 66, 66, 0.04), 0 -4px 16px rgba(66, 66, 66, 0.08);
+  border-radius: 8px;
+  background-color: var(--white);
+  border: 1px solid var(--grey-250);
+}
+
+.animate {
+  &__animated {
+    animation-timing-function: ease-in;
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+  }
+
+  &__fadeInBottomLeft {
+    animation-name: fadeInBottomLeft;
+  }
+
+  &__fadeOutBottomLeft {
+    animation-name: fadeOutBottomLeft;
+  }
+}
+
+.notification-popup {
+  &__timer-filler {
+    animation-name: timer;
+  }
+}
+
+@keyframes fadeInBottomLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-30%, 30%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeOutBottomLeft {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-30%, 30%, 0);
+  }
+}
+
+@keyframes timer {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0;
+  }
+}

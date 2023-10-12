@@ -1,0 +1,32 @@
+.tag-item-flag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  padding: 5px 32px;
+  background: var(--grey-100);
+  border: 1px solid var(--background);
+  color: var(--black);
+  position: relative;
+  transition: var(--transition);
+  transition-property: background-color, border;
+  border-radius: 28px;
+
+  &__flag {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: block;
+  }
+
+  &__txt {
+    border-radius: 28px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+  }
+}

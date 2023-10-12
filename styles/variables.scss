@@ -1,0 +1,51 @@
+:root {
+  --default-font: "TypeMatesCeraRoundPro", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  //colors
+  --black: #101010;
+  --black-900: #000000;
+  --white: #ffffff;
+  --background: #f4f5ff;
+  --grey-50: #fcfcfc;
+  --grey-90: #f9f9f9;
+  --grey-100: #f6f6f6;
+  --grey-110: #f2f2f2;
+  --grey-250: #e8ebf0;
+  --grey-83: #838383;
+  --grey-300: #d2d2d2;
+  --grey-500: #a0a0a0;
+  --blue: #6420ff;
+  --blue-50: #f0f8ff;
+  --blue-100: #dfd5ff;
+  --blue-300: #5c8cdf;
+  --blue-400: #64ecff;
+  --blue-500: #6420ff;
+  --blue-600: #686b8c;
+  --red: #ff6864;
+  --green-300: #b6df73;
+  --green: #7cba00;
+  --yellow: #ffb803;
+  --yellow-2: #ffd600;
+  --yellow-100: #ffefc8;
+  --violet: #a700ff;
+  --overlay-color: #00000099;
+  //grad - blue + violet
+
+  //sizes
+  --aside-menu-width: 242px;
+  --aside-menu-width-mob: 298px;
+  --aside-menu-collapsed: 64px;
+  --header-profile-height: 92px;
+  --popup-footer-height: 98px;
+  --grid-spacing: 20px;
+
+  --transition: 0.2s ease;
+  --jsvht: 100%;
+}
+
+@media (max-width: $mobile-big) {
+  :root {
+    --popup-footer-height: 87px;
+  }
+}

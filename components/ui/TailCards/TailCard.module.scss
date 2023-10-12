@@ -1,0 +1,65 @@
+.item {
+  border: 1px dashed var(--grey-300);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  cursor: pointer;
+  transition: var(--transition);
+  transition-property: border, color, background;
+
+  &__plus {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    background: var(--grey-100);
+    border-radius: 8px;
+    transition: var(--transition);
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      border-radius: 2px;
+      background: var(--black);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: var(--transition);
+    }
+
+    &::before {
+      width: 22px;
+      height: 1px;
+    }
+
+    &::after {
+      height: 22px;
+      width: 1px;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--background);
+
+      .item {
+        &__plus {
+          background-color: var(--white);
+
+          &::before,
+          &::after {
+            background-color: var(--blue);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .item {
+    min-height: 158px;
+  }
+}

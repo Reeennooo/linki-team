@@ -1,0 +1,88 @@
+.my-projects {
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 21px;
+
+    a {
+      display: none;
+    }
+  }
+}
+
+.projects-list {
+  :global {
+    .project-card {
+      cursor: pointer;
+    }
+
+    .project-card__two-btns {
+      .project-card__btn-chat {
+        font-size: 0;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        flex-shrink: 0;
+
+        svg {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+.my-projects-slider {
+  display: none;
+}
+
+@media (max-width: $mobile-big) {
+  .my-projects {
+    &__title {
+      margin-bottom: 17px;
+      position: relative;
+
+      a {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        display: block;
+      }
+    }
+  }
+
+  .projects-list {
+    display: none;
+  }
+
+  .my-projects-slider {
+    display: block;
+    margin-top: 16px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &__slide {
+      width: 100%;
+      height: auto;
+      max-width: 154px;
+      padding-bottom: 1px;
+    }
+
+    :global {
+
+      .project-plug {
+        min-height: 192px;
+        height: 100%;
+      }
+    }
+  }
+}

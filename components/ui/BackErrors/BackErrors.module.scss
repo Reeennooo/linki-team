@@ -1,0 +1,16 @@
+.back-errors {
+  margin-top: 10px;
+
+  p {
+    top: 100%;
+    left: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--red);
+    white-space: nowrap;
+    margin-bottom: 14px;
+    display: block;
+  }
+}

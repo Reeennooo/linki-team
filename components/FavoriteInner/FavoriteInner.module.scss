@@ -1,0 +1,51 @@
+.fav-filter {
+
+  &__header {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  &__toggle-selected-btn {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  &__header-btn-clear {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+}
+
+@media (max-width: $mobile) {
+  .fav-filter {
+
+    &__tags-wrap {
+      padding-top: 12px;
+    }
+
+    &__header {
+      display: flex;
+    }
+
+    &__wrap {
+      display: none;
+    }
+
+    &--is-open {
+
+      .fav-filter {
+
+        &__wrap {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,271 @@
+.expert-card-wrp {
+  padding-bottom: 12px;
+}
+
+.expert-card {
+  display: flex;
+  align-items: center;
+  padding: 10px 9px 10px 12px;
+  background: var(--white);
+  border: 1px solid var(--grey-300);
+  border-radius: 8px;
+  transition: var(--transition);
+  cursor: pointer;
+
+  .expert-card__icon svg {
+    fill: var(--grey-500);
+    transition: var(--transition);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--blue);
+
+      .price, .hours {
+        border-color: var(--grey-300);
+        color: var(--black);
+        padding: 2px 8px 6px;
+
+        input {
+          color: var(--black);
+        }
+      }
+
+      .expert-card__icon svg {
+        fill: var(--blue);
+      }
+
+      .expert-card__btns {
+        width: 64px;
+      }
+    }
+  }
+
+  &__icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+    margin-right: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: auto;
+    padding-right: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin: 0 5px;
+      transition: var(--transition);
+    }
+  }
+
+  &__btn-icon {
+    svg {
+      fill: var(--grey-500);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        svg {
+          fill: var(--blue);
+        }
+      }
+    }
+
+    &.dell {
+      @media (hover: hover) {
+        &:hover {
+          svg {
+            fill: var(--red);
+          }
+        }
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    transition-property: width;
+    padding-right: 2px;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 11px;
+    }
+  }
+
+  &--readonly {
+    .price, .hours {
+      border: none;
+      color: var(--grey-500);
+    }
+  }
+}
+
+.price, .hours {
+  padding: 2px 0 6px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: var(--transition);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color: var(--grey-500);
+  flex-shrink: 0;
+
+  input {
+    width: auto;
+    border: none;
+    outline: none;
+    max-width: 60px;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--grey-500);
+  }
+}
+
+.total {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 108px;
+}
+
+.evenly {
+  margin-left: 5px;
+  margin-right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  padding-bottom: 4px;
+}
+
+.controlls-wrp {
+  transition: var(--transition);
+  background: var(--white);
+  border-radius: 8px;
+  margin-top: 4px;
+
+  &.is-overflow {
+    overflow: hidden;
+  }
+
+  &.is-active {
+    box-shadow: 0 0 7px rgba(196, 196, 196, 0.42);
+  }
+}
+
+.controlls {
+  padding: 12px 16px 28px;
+  position: relative;
+
+  &__item {
+    margin-bottom: 28px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 41px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-500);
+  }
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 14px;
+    right: 16px;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 18px;
+      height: 1px;
+      background: var(--black);
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .expert-card {
+    position: relative;
+    display: block;
+    padding-left: 60px;
+
+    &__icon {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+    }
+
+    &__name {
+      overflow: hidden;
+      padding-right: 60px;
+    }
+
+    &__btns {
+      position: absolute;
+      width: auto;
+      right: 16px;
+      top: 10px;
+    }
+  }
+
+  .controlls {
+
+    &__title {
+      padding-right: 20px;
+    }
+  }
+}

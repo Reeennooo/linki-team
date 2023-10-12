@@ -1,0 +1,105 @@
+@import '../ProfileInfoBlock/ProfileInfoBlock.module';
+
+.security {
+  &__box {
+    margin-bottom: 32px;
+
+    &-pass {
+      display: flex;
+
+      & > div {
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &-del {
+      display: flex;
+    }
+  }
+
+  &__passBtn {
+    margin-top: 12px;
+    width: 224px;
+  }
+
+  &__delBtn {
+    width: 100%;
+    max-width: 224px;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  .security__form-input-dell {
+    margin-right: 12px;
+  }
+
+  .security__form-input {
+    margin-right: 12px;
+    max-width: unset;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.profileInfo {
+  &__form {
+    &-input {
+      max-width: 224px;
+      width: 100%;
+
+      input {
+        background: #fff;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .security {
+
+    &__box {
+      margin-bottom: 24px;
+    }
+
+    &__box-pass {
+      display: block;
+    }
+
+    .security {
+
+      &__form-input,
+      &__form-input-dell {
+        margin-right: 0;
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .profileInfo {
+
+    &__form-input {
+      max-width: none;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .security {
+
+    &__passBtn,
+    &__delBtn {
+      max-width: none;
+      width: 100%;
+    }
+
+    &__passBtn {
+      margin-top: 0;
+    }
+  }
+}

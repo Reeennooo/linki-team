@@ -1,0 +1,139 @@
+.btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  border: 1px solid var(--grey-300);
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  flex-shrink: 0;
+  transition: var(--transition);
+  transition-property: color, background-color;
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--blue-500);
+    }
+  }
+
+  span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  &__plus {
+    width: 12px;
+    height: 1px;
+    background-color: currentColor;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 1px;
+      height: 12px;
+      background-color: inherit;
+    }
+  }
+
+  &--is-online {
+
+    span {
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+      }
+
+      &::before {
+        width: 8px;
+        height: 8px;
+        background: var(--white);
+        top: -2px;
+        right: -3px;
+      }
+
+      &::after {
+        width: 6px;
+        height: 6px;
+        background-color: var(--red);
+        top: -1px;
+        right: -2px;
+      }
+    }
+  }
+
+  &--md {
+    width: 36px;
+    height: 36px;
+  }
+
+  &--stroke {
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue);
+      }
+    }
+
+    svg {
+      transition: var(--transition);
+      transition-property: color, fill, stroke;
+      fill: none;
+      stroke: currentColor;
+    }
+  }
+
+  &--warning {
+    @media (hover: hover) {
+      &:hover {
+        color: var(--red);
+      }
+    }
+  }
+
+  &--fill-stroke {
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue);
+
+        svg {
+          stroke: var(--blue);
+        }
+      }
+    }
+
+    svg {
+      transition: var(--transition);
+      transition-property: color, fill, stroke;
+      fill: none;
+      stroke: var(--black);
+    }
+
+    &.btn--is-active {
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--background);
+        }
+      }
+
+      svg {
+        stroke: var(--blue);
+        fill: var(--blue-500);
+      }
+    }
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}

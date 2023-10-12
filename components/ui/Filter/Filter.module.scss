@@ -1,0 +1,200 @@
+.filter {
+  width: 220px;
+
+  &__header {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  &__header-btn-clear {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+
+  &__toggle-selected-btn {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  &__toggle-btn {
+    flex-shrink: 0;
+    margin-top: 8px;
+    margin-left: auto;
+  }
+
+  &__btn-clear {
+    width: 100%;
+  }
+
+  &__range {
+    :global {
+      .select-drop-block {
+        &__drop {
+          padding: 45px 20px 5px;
+        }
+      }
+    }
+  }
+
+  :global {
+    .input-search {
+      input {
+        background: none;
+      }
+    }
+
+    .input-search,
+    .select-drop-block {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    .select-drop-block {
+      &__drop {
+        width: 100%;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.ul {
+  &__inner {
+    display: none;
+  }
+
+  &__main-btn,
+  &__inner-btn {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 6px 16px;
+    transition: 0.2s ease;
+    transition-property: color;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-right: 4px;
+    }
+
+    svg {
+      transform: rotate(90deg);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue);
+      }
+    }
+  }
+
+  &__inner-btn {
+    font-weight: 500;
+  }
+
+  &__li,
+  &__li--inner {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 30px;
+    transition: 0.2s ease;
+    transition-property: background-color;
+  }
+
+  &__li--inner {
+    padding: 6px 16px;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--grey-100);
+      }
+    }
+  }
+
+  :global {
+    .checkbox {
+      &__custom {
+        width: 18px;
+        height: 18px;
+      }
+
+      &__txt {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  &--inner-active {
+    .ul {
+      &__li {
+        display: none;
+
+        &--active {
+          display: block;
+
+          .ul {
+            &__inner {
+              display: block;
+            }
+
+            &__main-btn {
+              display: none;
+            }
+          }
+        }
+
+        &--inner {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .filter {
+    width: 100%;
+
+    &__toggle-btn {
+      display: block;
+    }
+
+    &__header {
+      display: flex;
+    }
+
+    &__wrap {
+      display: none;
+    }
+
+    &__main {
+      display: block;
+    }
+
+    &__btn-clear {
+      display: none;
+    }
+
+    &--is-open {
+      .filter {
+        &__wrap {
+          display: block;
+        }
+      }
+    }
+  }
+}

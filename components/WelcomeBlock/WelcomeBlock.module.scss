@@ -1,0 +1,176 @@
+.welcome-block {
+  background: var(--grey-100);
+  border-radius: 8px;
+  padding: 9px 44px 40px 32px;
+  color: var(--black);
+  display: flex;
+  justify-content: space-between;
+  min-height: 218px;
+  position: relative;
+
+  &__left {
+    padding-top: 13px;
+    width: 100%;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 4px;
+    width: 100%;
+  }
+
+  &__txt {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 394px;
+    margin-right: auto;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 177px;
+    padding-top: 6px;
+    height: 202px;
+    min-width: 130px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    &--complete {
+      max-width: 264px;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 402px;
+    margin-bottom: -8px;
+
+    button, a {
+      white-space: nowrap;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    a {
+      margin-right: 16px;
+    }
+  }
+
+  &__contact-manager {
+    padding: 9px 17px;
+  }
+
+  &__close {
+    display: none;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--grey-500);
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 0;
+  }
+}
+
+@media (max-width: $desktop) {
+  .welcome-block {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 20px;
+
+    &__img {
+      justify-content: center;
+    }
+
+    &__left {
+      order: 2;
+      max-width: 100%;
+    }
+
+    &__title {
+      max-width: 100%;
+    }
+
+    &__txt {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .welcome-block {
+    &__close {
+      display: flex;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .welcome-block {
+    padding-top: 9px;
+    padding-bottom: 22px;
+
+    &__img {
+      width: 39%;
+      min-width: 106px;
+      height: auto;
+    }
+
+    &__left {
+      padding-top: 1px;
+    }
+
+    &__title {
+      text-align: center;
+      line-height: 26px;
+    }
+
+    &__txt {
+      text-align: center;
+      font-size: 14px;
+      line-height: 18px;
+      padding: 0 25px;
+      color: var(--grey-500);
+      margin-bottom: 35px;
+    }
+
+    &__btns {
+      padding: 0 4px;
+      margin-left: auto;
+      margin-right: auto;
+      flex-wrap: wrap;
+
+      button, a {
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 15px;
+      }
+
+      a {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}

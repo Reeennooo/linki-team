@@ -1,0 +1,71 @@
+.block {
+  padding-bottom: 30px;
+
+  :global {
+    .rc-slider-mark {
+      bottom: auto;
+      top: calc(100% + 10px);
+    }
+
+    .rc-slider-mark-text {
+      &:first-child {
+        left: -5px;
+      }
+
+      &:last-child {
+        right: -5px;
+      }
+    }
+
+    .rc-slider-handle {
+      color: var(--blue-500);
+      font-size: 12px;
+      line-height: 18px;
+
+      @media (hover: hover) {
+        &:hover {
+          &::before {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+
+      &.rc-slider-handle-dragging {
+        &::before {
+          width: 12px;
+          height: 12px;
+        }
+
+        span {
+          opacity: 1;
+        }
+      }
+
+      span {
+        opacity: 0;
+        color: var(--black);
+        background-color: #fff;
+        filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.14));
+        bottom: calc(100% + 4px);
+        border-radius: 4px;
+        padding: 5px 4px;
+
+        svg {
+          position: absolute;
+          top: 100%;
+          left: calc(50%);
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .rc-slider-track {
+      background-color: var(--blue-500);
+    }
+
+    .rc-slider-dot {
+      display: none;
+    }
+  }
+}

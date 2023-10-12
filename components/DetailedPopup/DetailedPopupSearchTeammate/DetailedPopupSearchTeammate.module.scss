@@ -1,0 +1,45 @@
+.search-member {
+  &__search {
+    input {
+      background: var(--white);
+    }
+  }
+
+  &__img {
+    padding-top: 76px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  &__txt {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+
+    span {
+      color: var(--blue-300);
+      transition: var(--transition);
+      cursor: pointer;
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--blue);
+        }
+      }
+    }
+  }
+}
+
+.favorite-list {
+  margin-top: 12px;
+
+  &__item {
+    margin-bottom: 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

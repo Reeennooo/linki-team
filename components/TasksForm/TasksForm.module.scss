@@ -1,0 +1,280 @@
+.task-form {
+  background: var(--white);
+  border: 1px solid var(--grey-250);
+  border-radius: 8px;
+  padding: 24px 32px;
+  color: var(--black);
+
+  .field-block {
+    margin-bottom: 31px;
+
+    &--cat-onboarding {
+      height: 350px;
+    }
+  }
+
+  &__category {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 12px;
+    width: 100%;
+    max-width: 582px;
+  }
+
+  &__multiselect-wrp {
+    position: relative;
+    width: 100%;
+    // max-width: 632px;
+  }
+
+  &__multiselect-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 18px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-500);
+    z-index: 1000;
+  }
+
+  &__multiselect {
+    :global {
+
+      .react-select__value-container {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .react-select__clear-indicator {
+        display: none;
+      }
+    }
+  }
+
+  &__submit-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 37px;
+
+    button {
+      height: 48px;
+      font-size: 18px;
+    }
+  }
+
+  &__publish {
+    margin-left: 16px;
+    height: 48px;
+  }
+
+  &__save {
+    width: 198px;
+  }
+}
+
+.selected-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -8px;
+  margin-bottom: -8px;
+  margin-top: 12px;
+
+  &__item {
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  &--lang {
+    display: none;
+  }
+}
+
+.field-block {
+  &.error {
+    input {
+      border-color: var(--red);
+    }
+  }
+
+  &__error {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--red);
+    margin-top: 4px;
+  }
+
+  & > button {
+    min-width: 240px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--grey-500);
+    margin-bottom: 12px;
+  }
+
+  &__input {
+    margin-top: 7px;
+    background: var(--white);
+    border: 1px solid var(--grey-300);
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    padding: 12px 18px 10px;
+    // max-width: 631px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    transition: var(--transition);
+
+    &:hover {
+      border-color: var(--blue);
+    }
+
+    &::placeholder {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: var(--grey-500);
+    }
+
+    &:focus-visible {
+      outline: 1px solid var(--blue);
+    }
+  }
+}
+
+.cover-gallery {
+  max-width: 631px;
+  position: relative;
+  min-height: 315px;
+
+  :global {
+    .preloader {
+      position: absolute;
+      transition: var(--transition);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition-delay: 1.2s;
+      z-index: 11;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: white;
+    transition: var(--transition);
+    transition-delay: 1.4s;
+    z-index: 10;
+  }
+
+  &.is-loaded {
+    min-height: unset;
+
+    :global {
+      .preloader {
+        opacity: 0;
+      }
+    }
+
+    &::after {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .task-form {
+    padding: 0;
+    border: none;
+
+    .field-block {
+      margin-bottom: 24px;
+    }
+
+    &__category {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 11px;
+    }
+
+    &__multiselect-label {
+      font-size: 14px;
+    }
+
+    &__submit-block {
+      button {
+        min-width: 143px;
+        padding: 7px 35px;
+      }
+    }
+  }
+
+  .field-block {
+    & > button {
+      min-width: 170px;
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__input {
+      margin-top: 9px;
+      padding: 10px 15px 6px;
+    }
+  }
+
+  .selected-items {
+
+    &--lang {
+      display: flex;
+    }
+
+    &--all {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $mobile-sm) {
+  .task-form {
+
+    &__submit-block {
+
+      button {
+        width: 100%;
+        min-width: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}

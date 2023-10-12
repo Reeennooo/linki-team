@@ -1,0 +1,199 @@
+@import '../TasksForm/TasksForm.module';
+@import '../ProfileInfoBlock/ProfileInfoBlock.module';
+@import '../FavoriteFilter/FavoriteFilter.module';
+
+.profileAddit {
+  // margin-top: 32px;
+  &__box {
+    margin-top: 32px;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--grey-500);
+  }
+
+  &__tooltip {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transform: translateY(3px);
+    margin-left: 8px;
+  }
+
+  &__input {
+    margin-top: 12px;
+    line-height: 0;
+
+    input {
+      background: var(---white);
+    }
+
+    button {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    textarea {
+      width: 100%;
+      background: var(---white);
+      height: 132px;
+      padding: 12px 16px;
+    }
+
+    &.lang {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    :global {
+      .select-drop-block__drop {
+        width: 100%;
+        z-index: 1;
+      }
+
+      .checkbox {
+        width: 100%;
+      }
+    }
+  }
+
+  &__portfolio {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 12px;
+
+    .profileAddit__input {
+      margin-right: 12px;
+      margin-top: 0;
+      width: calc(100% - 152px);
+
+      input {
+        height: 42px;
+      }
+    }
+
+    button {
+      min-width: 140px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__lang {
+    margin-right: 12px;
+    width: 100%;
+  }
+
+  &__timezon {
+    width: 100%;
+    max-width: 240px;
+    flex-shrink: 0;
+  }
+
+  &__company {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    &-box {
+      width: 49%;
+      // max-width: 341px;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  &__role {
+    margin-top: 12px;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__rich {
+    margin-top: 12px;
+  }
+}
+
+.task-form {
+  &__multiselect {
+    &-wrp {
+      max-width: initial;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .profileAddit {
+
+    &__box {
+      margin-top: 24px;
+    }
+
+    &__portfolio {
+
+      button {
+        min-width: 100px;
+      }
+
+      .profileAddit {
+
+        &__input {
+          width: 100%;
+        }
+      }
+    }
+
+    &__bottom {
+      display: block;
+    }
+
+    &__lang {
+      position: relative;
+      z-index: 3;
+      margin-bottom: 24px;
+    }
+
+    &__timezon {
+      max-width: none;
+      padding-bottom: 10px;
+
+      :global {
+        .react-select {
+
+          &__menu-list {
+            max-height: 100px;
+          }
+        }
+      }
+    }
+
+    &__company {
+      display: block;
+    }
+
+    &__company-box {
+      width: 100%;
+    }
+
+    &__role {
+      z-index: 4;
+    }
+  }
+}

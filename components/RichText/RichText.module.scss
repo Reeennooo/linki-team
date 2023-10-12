@@ -1,0 +1,273 @@
+.editor-wrp {
+  border: 1px solid var(--grey-300);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+
+  div {
+    transition: var(--transition);
+  }
+
+  @media (hover: hover) {
+    &.focused,
+    &:hover {
+      border-color: var(--blue);
+
+      .editor-buttons {
+        border-color: var(--blue);
+      }
+
+      .editor-select-wrp {
+        border-color: var(--blue);
+      }
+
+      div {
+        border-color: var(--blue);
+      }
+    }
+  }
+
+  &.error {
+    border-color: var(--red);
+
+    .editor-buttons {
+      border-color: var(--grey-300);
+    }
+
+    .editor-select-wrp {
+      border-color: var(--grey-300);
+    }
+
+    div {
+      border-color: var(--grey-300);
+    }
+  }
+
+  &--sm {
+    .editor-field {
+      height: 115px !important;
+      overflow-y: auto;
+    }
+  }
+}
+
+.editor-buttons {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--grey-300);
+  padding: 0 4px;
+  transition: var(--transition);
+}
+
+.editor-select {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 27px;
+    height: 17px;
+    position: relative;
+    cursor: pointer;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__drop {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10%);
+    z-index: 1;
+    padding: 8px 4px;
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+  }
+}
+
+.editor-select-wrp {
+  display: flex;
+  width: 122px;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 1px solid var(--grey-300);
+  border-right: 1px solid var(--grey-300);
+  height: 34px;
+  padding-left: 12px;
+  padding-right: 12px;
+  transition: var(--transition);
+}
+
+.editor-history {
+  display: flex;
+  align-items: center;
+  width: 69px;
+  padding: 0 12px;
+  justify-content: space-between;
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+
+    svg {
+      width: 18px;
+      object-fit: contain;
+      object-position: center;
+      fill: none;
+      stroke: var(--grey-500);
+      transition: var(--transition);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        svg {
+          stroke: var(--black);
+        }
+      }
+    }
+  }
+}
+
+.editor-field {
+  padding: 9px 18px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  height: 141px !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  span[data-slate-leaf] > span[data-slate-placeholder] {
+    padding-right: 36px;
+  }
+
+  ol,
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  a {
+    text-decoration: underline;
+    color: var(--blue);
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.editor-button {
+  cursor: pointer;
+  color: var(--grey-500);
+  display: block;
+  margin: 0 6px;
+
+  svg {
+    transition: var(--transition);
+  }
+
+  &.is-active {
+    svg {
+      color: var(--black);
+    }
+  }
+
+  &:hover {
+    background: var(--grey-100);
+    border-radius: 2px;
+  }
+
+  & > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.editor-align {
+  border-right: 1px solid var(--grey-300);
+  border-left: 1px solid var(--grey-300);
+  flex-shrink: 0;
+}
+
+.editor-lists {
+  border-right: 1px solid var(--grey-300);
+}
+
+.editor-align,
+.editor-lists {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 6px;
+}
+
+.editor-font {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 34px;
+  padding-right: 6px;
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.editor-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  padding-left: 6px;
+}
+
+.editor-quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid var(--grey-300);
+  height: 34px;
+  padding-right: 6px;
+}
+
+@media (max-width: $mobile-big) {
+  .editor-buttons {
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 1px;
+      width: 1px;
+      border-radius: 1px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 1px solid var(--blue);
+    }
+  }
+}

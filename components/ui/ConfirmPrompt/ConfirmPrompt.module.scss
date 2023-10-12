@@ -1,0 +1,143 @@
+.prompt {
+  position: relative;
+  z-index: 3;
+
+  &__overlay {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--black);
+    opacity: 0.7;
+  }
+
+  &__drop {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 20px);
+    width: 289px;
+    transform: translateX(-50%);
+    margin-bottom: -20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    transition-property: visibility, opacity, margin-bottom;
+
+    &--right,
+    &--left {
+      transform: none;
+    }
+
+    &--right {
+      left: auto;
+      right: 0;
+    }
+
+    &--left {
+      left: 0;
+    }
+  }
+
+  &__inner {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 0 7px rgba(196, 196, 196, 0.42);
+    padding: 12px 16px 16px;
+  }
+
+  &__body {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--black);
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+
+    button {
+      width: 100%;
+      margin-right: 12px;
+
+      &:first-child {
+        margin-right: 12px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &--is-active {
+
+    .prompt {
+
+      &__drop {
+        opacity: 1;
+        visibility: visible;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .prompt {
+    z-index: 100;
+
+    &__overlay {
+      display: block;
+    }
+
+    &__drop {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      transform: none;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &__inner {
+      position: relative;
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+      padding: 0;
+    }
+
+    &__body {
+      padding: 20px var(--grid-spacing) 12px;
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__footer {
+      border-top: 1px solid var(--grey-250);
+      padding: var(--grid-spacing);
+
+      button {
+        height: 42px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &--is-active {
+      z-index: 101;
+    }
+  }
+}

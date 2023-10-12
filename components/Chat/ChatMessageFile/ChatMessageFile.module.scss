@@ -1,0 +1,31 @@
+.mes {
+  display: flex;
+
+  @media (hover: hover) {
+    &:hover {
+      .mes {
+        &__name {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  svg {
+    flex-shrink: 0;
+    margin-right: 10px;
+    margin-top: 4px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__size {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--grey-500);
+  }
+}

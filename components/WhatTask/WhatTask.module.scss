@@ -1,0 +1,47 @@
+.task-wrapper {
+  padding-bottom: 60px;
+
+  .title {
+    color: var(--black);
+    margin-bottom: 32px;
+    white-space: pre-line;
+  }
+
+  .task-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+
+.task {
+  display: inline-block;
+  border-radius: 8px;
+  background-color: var(--grey-100);
+  margin-bottom: 8px;
+  padding: 8px 16px;
+  margin-right: 8px;
+
+  p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--black);
+  }
+}
+
+@media (max-width: $mobile) {
+  .task-wrapper {
+
+    .task-container {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+    }
+
+    .task {
+      margin-right: 0;
+    }
+  }
+}

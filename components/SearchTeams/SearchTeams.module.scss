@@ -1,0 +1,45 @@
+.search-teams {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.search-teams-list {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 28px;
+}
+
+
+@media (max-width: $tablet) {
+  .search-teams {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .search-teams-list {
+    margin-top: 32px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .search-teams-list {
+    display: block;
+
+    div {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .search-teams-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+  }
+}

@@ -1,0 +1,28 @@
+.status {
+  color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  border-radius: 5px;
+  background-color: var(--yellow-100);
+  padding: 9px;
+
+  svg {
+    max-width: 15px;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+
+  &__txt {
+    color: var(--black-900);
+  }
+}
+
+@media (max-width: $tablet) {
+  .status {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,12 @@
+.lang-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-right: -8px;
+  margin-bottom: -8px;
+
+  &__item {
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+}

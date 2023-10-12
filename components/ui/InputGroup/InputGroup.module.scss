@@ -1,0 +1,161 @@
+.input-group {
+  position: relative;
+
+  &__eye {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    cursor: pointer;
+    color: var(--grey-300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+
+    &.error {
+      pointer-events: none;
+    }
+
+    &.is-active {
+      color: var(--blue);
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    background: var(--white);
+  }
+
+  .input,
+  input {
+    width: 100%;
+  }
+
+  .input,
+  input,
+  textarea {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--grey-300);
+    background-color: var(--white);
+    color: var(--black);
+    height: 48px;
+    outline: none;
+    padding: 0 18px;
+    transition: border-color 0.2s linear;
+    font-family: var(--default-font);
+
+    &.no-empty {
+      background: var(--background);
+    }
+
+    &::placeholder {
+      color: var(--grey-500);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      font-family: var(--default-font);
+    }
+
+    &.not-empty {
+      border-color: var(--blue);
+    }
+
+    &:focus {
+      border-color: var(--blue);
+    }
+
+    &.error {
+      border-color: var(--red);
+    }
+
+    &.success {
+      border-color: var(--main-green);
+    }
+
+    &[readonly] {
+      background: var(--background);
+    }
+
+    &[disabled] {
+      background-color: var(--main-grey-light);
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  &__label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-500);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+  }
+
+  &__error {
+    top: 100%;
+    left: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--red);
+    margin-bottom: 14px;
+    display: block;
+    white-space: break-spaces;
+
+    &.abs {
+      position: absolute;
+      top: auto;
+      bottom: -15px;
+      left: 0;
+      font-size: 12px;
+      margin: 0;
+      line-height: 100%;
+    }
+  }
+
+  &_sm {
+
+    input,
+    textarea {
+      height: 42px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+
+      &::placeholder {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    .input-group__eye {
+      top: 11px;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .input-group {
+
+    input,
+    textarea {
+      height: 42px;
+    }
+  }
+}

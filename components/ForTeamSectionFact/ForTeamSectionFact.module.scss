@@ -1,0 +1,50 @@
+.forteam {
+  &__mobile-fact {
+    color: var(--white);
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 104%;
+      white-space: pre-line;
+
+      svg {
+        fill: none;
+        stroke: var(--white);
+        width: 26px;
+        height: 26px;
+        flex-shrink: 0;
+      }
+    }
+
+
+    &-text {
+      padding-top: 20px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 127%;
+    }
+  }
+
+  &__mobile-text-wrapper {
+    overflow: hidden;
+    transition: var(--transition);
+    transition-property: height;
+  }
+}
+
+
+.is-active {
+  .forteam__mobile-fact-title {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

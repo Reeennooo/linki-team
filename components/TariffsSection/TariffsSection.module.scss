@@ -1,0 +1,83 @@
+.tariffs {
+
+  &__textblock {
+    padding-right: 20px;
+    padding-top: 40px;
+    padding-left: 61px;
+
+    @media (max-width: $desktop-big) {
+      padding-top: 24px;
+      padding-left: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+    color: var(--blue-500);
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 32px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+
+@media (max-width: $tablet) {
+  .tariffs {
+    &__list {
+      margin-bottom: 24px;
+    }
+
+    &__textblock {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 132px;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .tariffs {
+    :global {
+      .card {
+        margin-bottom: 24px;
+      }
+    }
+
+    &__textblock {
+      padding-top: 0;
+    }
+
+    &__list {
+      display: block;
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+
+    &__list-item {
+      width: 100%;
+      max-width: 284px;
+    }
+  }
+}

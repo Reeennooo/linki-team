@@ -1,0 +1,9 @@
+.onboarding-modal {
+  opacity: 0;
+  transition: var(--transition);
+  pointer-events: none;
+
+  &.is-open {
+    opacity: 1;
+  }
+}

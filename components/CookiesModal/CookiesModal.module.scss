@@ -1,0 +1,122 @@
+.cookiesModal {
+  position: fixed;
+  bottom: 28px;
+  right: 40px;
+  background-color: var(--white);
+  box-shadow: 0 1px 14px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  width: 429px;
+  z-index: 101;
+  padding: 16px 20px 28px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    color: var(--blue-500);
+    margin-bottom: 4px;
+  }
+
+  &__txt {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-500);
+
+    a {
+      color: var(--blue-300);
+      transition: var(--transition);
+      transition-property: color;
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--black);
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    padding-right: 60px;
+    margin-top: 22px;
+
+    button {
+
+      &:first-child {
+        margin-right: 12px;
+        width: 168px;
+      }
+
+      &:last-child {
+        width: 100px;
+        margin-right: 0;
+        color: var(--black);
+        border-color: var(--grey-300);
+
+        @media (hover: hover) {
+          &:hover {
+            border-color: var(--black);
+            background-color: var(--black);
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .cookiesModal {
+    width: 320px;
+    right: 20px;
+    bottom: 10px;
+    padding: 16px 16px 24px;
+
+    &__title {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    &__txt {
+      font-size: 14px;
+      line-height: 18px;
+      padding-right: 20px;
+    }
+
+    &__footer {
+      padding-right: 50px;
+
+      button {
+        &:first-child {
+          margin-right: 12px;
+          width: 120px;
+        }
+
+        &:last-child {
+          width: 90px;
+          white-space: nowrap;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__decor {
+      right: 16px;
+      bottom: 26px;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .cookiesModal {
+    width: 300px;
+    right: 10px;
+  }
+}

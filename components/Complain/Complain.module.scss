@@ -1,0 +1,191 @@
+.complain {
+  position: relative;
+
+  &__overlay {
+    display: none;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--grey-250);
+    padding: 12px 16px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__close {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    flex-shrink: 0;
+    margin-left: 10px;
+    padding: 0;
+    transition: var(--transition);
+    transition-property: color;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue-500);
+      }
+    }
+  }
+
+  &__body {
+    padding: 12px 0 16px;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    padding: 0 16px;
+  }
+
+  &__input {
+    padding: 0 16px;
+  }
+
+  .complain__input input {
+    background: var(--white);
+  }
+
+  &__footer {
+    padding: 10px 16px 0;
+  }
+
+  &__drop {
+    width: 254px;
+    position: absolute;
+    bottom: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: var(--white);
+    box-shadow: 0 0 7px rgba(196, 196, 196, 0.42);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    transition-property: opacity, visibility, transform;
+  }
+
+  &__submit {
+    width: 100%;
+  }
+
+  &--is-active {
+
+    .complain {
+
+      &__drop {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .complain {
+    &__drop {
+      left: 0;
+      transform: translateY(10px);
+    }
+
+    &--is-active {
+
+      .complain {
+        &__drop {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .complain {
+
+    &__overlay {
+      display: block;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+      pointer-events: none;
+      background-color: var(--black-900);
+      transition: var(--transition);
+      transition-property: opacity;
+    }
+
+    &__header {
+      padding: 20px;
+    }
+
+    &__title {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    &__close {
+      display: none;
+    }
+
+    &__body {
+      padding-top: 24px;
+      padding-bottom: 0;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+      line-height: 24px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-bottom: 12px;
+    }
+
+    &__input {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    &__footer {
+      border-top: 1px solid var(--grey-250);
+      padding: 22px 20px;
+      margin-top: 24px;
+    }
+
+    &__drop {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &--is-active {
+
+      .complain {
+        &__overlay {
+          opacity: 0.7;
+          pointer-events: auto;
+        }
+      }
+    }
+  }
+}

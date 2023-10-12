@@ -1,0 +1,111 @@
+.custom-tooltip-theme {
+  color: var(--black) !important;
+  background-color: white !important;
+  padding: 12px 15px 12px 18px !important;
+  max-width: 285px;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  line-height: 18px !important;
+  border: 1px solid #D9D9D9 !important;
+  border-radius: 8px !important;
+  margin-left: 17px !important;
+
+  &.show {
+    opacity: 1 !important;
+  }
+
+  &::after {
+    border: none !important;
+    background: url(/img/icons/tooltip-arrow.svg);
+    background-size: contain;
+    background-position: center;
+    width: 17px !important;
+    height: 17px !important;
+    left: -15px !important;
+    transform: translateY(-50%);
+  }
+
+  &__title {
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    color: var(--black) !important;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  &__p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--black) !important;
+
+    .pink {
+      color: #AD00FF !important;
+    }
+
+    .blue {
+      color: #6420FF !important;
+    }
+
+    .red {
+      color: #FF6864 !important;
+    }
+  }
+}
+
+.custom-tooltip-theme2 {
+  padding: 4px 8px !important;
+  font-weight: 400 !important;
+  font-size: 10px !important;
+  line-height: 16px !important;
+  max-width: 190px !important;
+}
+
+.custom-tooltip-theme,
+.custom-tooltip-theme2 {
+  a {
+    text-decoration: underline;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.custom-tooltip-theme-white {
+  width: 100%;
+  max-width: 275px;
+  background: var(--white) !important;
+  color: var(--grey-500) !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 18px !important;
+  filter: drop-shadow(0 4px 4px rgba(66, 66, 66, 0.04)) drop-shadow(0 -4px 16px rgba(66, 66, 66, 0.08));
+
+  &.show {
+    opacity: 1 !important;
+  }
+
+  &::after {
+    border-top-color: var(--white) !important;
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .custom-tooltip-theme-white {
+    max-width: 222px;
+    padding: 8px 16px;
+
+    &::after {
+      border-left-color: var(--white) !important;
+    }
+  }
+}
+

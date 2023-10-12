@@ -1,0 +1,132 @@
+.modal {
+
+  &__tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    margin: 0 32px 32px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 36px;
+      height: 1px;
+      background-color: var(--grey-250);
+    }
+  }
+
+  &__btn-all {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--blue-500);
+    padding: 0;
+    margin-left: 10px;
+    transition: var(--transition);
+    transition-property: color;
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--black-900);
+      }
+    }
+  }
+
+  &__btn-all-header {
+    display: none;
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 16px 32px;
+
+    p {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 32px;
+      color: var(--grey-500);
+      margin-bottom: 12px;
+    }
+  }
+
+  :global {
+    .modal {
+      &__body {
+        padding: 16px 0 0;
+      }
+
+      &__body-inner {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .tabs-links-list {
+      border: none;
+      margin: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  .modal {
+
+    &__tabs {
+
+      &::before {
+        top: 28px;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .modal {
+    &__btn-all {
+      display: none;
+    }
+
+    &__btn-all-header {
+      display: inline-block;
+    }
+
+    :global {
+      .detailed-popup-header {
+        &__close {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .modal {
+    &__tabs {
+      display: block;
+      margin: 0 0 25px;
+    }
+
+    //:global {
+    //  .tabs-links-list {
+    //    margin-left: calc(-1 * var(--grid-spacing));
+    //    margin-right: calc(-1 * var(--grid-spacing));
+    //  }
+    //}
+  }
+}

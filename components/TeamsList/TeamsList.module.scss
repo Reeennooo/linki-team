@@ -1,0 +1,48 @@
+.teams-list {
+  background: var(--grey-100);
+  padding: 16px 20px 24px;
+  width: 100%;
+
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 16px;
+  }
+
+  &__add-btn {
+    margin-top: 12px;
+  }
+
+  &__item {
+
+    margin-top: 12px;
+    cursor: pointer;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &.is-active {
+      background: var(--background);
+      border-color: var(--blue);
+    }
+  }
+
+  &__teams {
+    max-height: 132px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .teams-list {
+    padding: 16px 16px 20px;
+
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
